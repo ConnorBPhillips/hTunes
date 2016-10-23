@@ -250,3 +250,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+
+# Exceptions
+hTunes/bin/Debug/*
+!hTunes/bin/Debug/taglib-sharp.dll
+!hTunes/bin/Debug/music.xml
+!hTunes/bin/Debug/music.xsd
