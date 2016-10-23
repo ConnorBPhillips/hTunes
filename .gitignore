@@ -252,7 +252,7 @@ paket-files/
 *.sln.iml
 
 # Exceptions
-hTunes/bin/Debug/*
 !hTunes/bin/Debug/taglib-sharp.dll
 !hTunes/bin/Debug/music.xml
 !hTunes/bin/Debug/music.xsd
+hTunes/bin/Debug/*
