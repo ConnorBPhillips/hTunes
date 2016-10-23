@@ -7,6 +7,7 @@
         <ListBox HorizontalAlignment="Left" Height="254" Margin="10,44,0,0" VerticalAlignment="Top" Width="100"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="164,278,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Button" HorizontalAlignment="Left" Margin="305,278,0,0" VerticalAlignment="Top" Width="75"/>
+        <ToolBar HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="517"/>
 
     </Grid>
 </Window>
