@@ -16,7 +16,9 @@
         <Button Content="Stop" HorizontalAlignment="Left" Margin="305,278,0,0" VerticalAlignment="Top" Width="75"/>
         <ToolBar HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="517">
             <Button Content="Open" />
+           
             <Button Content="New Playlist" />
+            <Separator></Separator>
             <Button Content="About" />
         </ToolBar>
              
