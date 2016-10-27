@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Margin="123,44,0,0" VerticalAlignment="Top" Height="217" Width="373">
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="123,44,0,0" VerticalAlignment="Top" Height="217" Width="373" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn Binding="{x:Null}" Width="150" ClipboardContentBinding="{x:Null}" Header="Title"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" Width="100" ClipboardContentBinding="{x:Null}" Header="Artist"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" Width="50" ClipboardContentBinding="{x:Null}" Header="Album"/>
-                <DataGridCheckBoxColumn Binding="{x:Null}" Width="50" ClipboardContentBinding="{x:Null}" Header="Genre"/>
+                <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding title}" Header="Title"/>
+                <DataGridTextColumn Binding="{Binding artist}" Header="Artist"/>
+                <DataGridTextColumn Binding="{Binding album}" Header="Album"/>
+                <DataGridTextColumn Binding="{Binding genre}" Header="Genre"/>
             </DataGrid.Columns>
         </DataGrid>
         <ListBox HorizontalAlignment="Left" Height="254" Margin="10,44,0,0" VerticalAlignment="Top" Width="100"/>

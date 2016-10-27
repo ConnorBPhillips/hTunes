@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using hTunes;
+using System.Data;
 
 namespace hTunes
 {
@@ -24,6 +25,15 @@ namespace hTunes
         public MainWindow()
         {
             InitializeComponent();
+
+            DataSet musicDataSet = new DataSet();
+
+            musicDataSet.ReadXmlSchema("music.xsd");
+
+            musicDataSet.ReadXml("music.xml");
+
+            dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
+   
         }
     }
 }
