@@ -22,18 +22,41 @@ namespace hTunes
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DataSet musicDataSet = new DataSet();
+        private MusicLib musicLib = new MusicLib();
         public MainWindow()
         {
             InitializeComponent();
 
-            DataSet musicDataSet = new DataSet();
+           
 
             musicDataSet.ReadXmlSchema("music.xsd");
 
             musicDataSet.ReadXml("music.xml");
 
             dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
-   
+            listBox.Items.Add("All Music");
+
+            var playList = musicLib.Playlists;
+            
+            foreach (var item in playList)
+            {
+                listBox.Items.Add(item);
+            }
+        }
+
+        private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string curItem = listBox.SelectedItem.ToString();
+
+            if (curItem == "All Music")
+            {
+                dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
+            }
+            else
+            {
+                dataGrid.ItemsSource = musicLib.SongsForPlaylist(curItem).DefaultView;
+            }
         }
     }
 }
