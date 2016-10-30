@@ -27,13 +27,20 @@ namespace hTunes
             InitializeComponent();
 
             DataSet musicDataSet = new DataSet();
+            MusicLib music = new MusicLib();
 
             musicDataSet.ReadXmlSchema("music.xsd");
 
             musicDataSet.ReadXml("music.xml");
 
             dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
-   
+            listBox.Items.Add("All Music");
+
+            var playlist = music.Playlists;
+            foreach ( var playlists in playlist)
+            {
+                listBox.Items.Add(playlists);
+            }
         }
     }
 }
