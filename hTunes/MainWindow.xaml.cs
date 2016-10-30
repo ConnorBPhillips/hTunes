@@ -28,7 +28,12 @@ namespace hTunes
         {
             InitializeComponent();
 
+<<<<<<< HEAD
            
+=======
+            DataSet musicDataSet = new DataSet();
+            MusicLib music = new MusicLib();
+>>>>>>> origin/master
 
             musicDataSet.ReadXmlSchema("music.xsd");
 
@@ -37,6 +42,7 @@ namespace hTunes
             dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
             listBox.Items.Add("All Music");
 
+<<<<<<< HEAD
             var playList = musicLib.Playlists;
             
             foreach (var item in playList)
@@ -56,6 +62,12 @@ namespace hTunes
             else
             {
                 dataGrid.ItemsSource = musicLib.SongsForPlaylist(curItem).DefaultView;
+=======
+            var playlist = music.Playlists;
+            foreach ( var playlists in playlist)
+            {
+                listBox.Items.Add(playlists);
+>>>>>>> origin/master
             }
         }
     }
