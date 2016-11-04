@@ -66,5 +66,35 @@ namespace hTunes
             }
            
         }
+       private void removeFromPlaylist()
+        {
+
+        }
+
+        private void about_Click(object sender, RoutedEventArgs e)
+        {
+            AboutBox1 aboutBox = new AboutBox1();
+            aboutBox.Show();
+        }
+
+        private void play_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void stop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void open_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void newPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

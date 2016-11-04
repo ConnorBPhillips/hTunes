@@ -13,6 +13,13 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <DataGrid x:Name="dataGrid" Margin="2,10,10,10" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1" CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="" >
+
+                    </MenuItem>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding title}" Header="Title"/>
@@ -22,15 +29,23 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <ListBox x:Name="listBox" HorizontalAlignment="Right" Margin="0,10,3,10" Width="102" Grid.Column="0" Grid.Row="1" SelectionChanged="listBox_SelectionChanged" SelectionMode="Single"/>
-        <Button Content="Play" HorizontalAlignment="Center" Margin="100,0,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="2"/>
-        <Button Content="Stop" Margin="113,0,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Width="76"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Right" Margin="0,10,3,10" Width="102" Grid.Column="0" Grid.Row="1" SelectionChanged="listBox_SelectionChanged" SelectionMode="Single">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Command="">
+                        
+                    </MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+        </ListBox>
+        <Button Content="Play" HorizontalAlignment="Center" Margin="100,0,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="2" Click="play_Click"/>
+        <Button Content="Stop" Margin="113,0,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Width="76" Click="stop_Click"/>
         <ToolBar VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2" >
-            <Button Content="Open" />
+            <Button Name="Open" Content="Open" Click="open_Click" />
 
-            <Button Content="New Playlist" />
+            <Button Name="newPlaylist" Content="New Playlist" Click="newPlaylist_Click" />
             <Separator></Separator>
-            <Button Content="About" />
+            <Button Name="About" Content="About" Click="about_Click" />
         </ToolBar>
 
 
