@@ -20,6 +20,7 @@ namespace hTunes
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
         private DataSet musicDataSet = new DataSet();
@@ -28,21 +29,21 @@ namespace hTunes
         {
             InitializeComponent();
 
-<<<<<<< HEAD
+
            
-=======
-            DataSet musicDataSet = new DataSet();
-            MusicLib music = new MusicLib();
->>>>>>> origin/master
+
+           
+
 
             musicDataSet.ReadXmlSchema("music.xsd");
 
             musicDataSet.ReadXml("music.xml");
 
             dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
+
             listBox.Items.Add("All Music");
 
-<<<<<<< HEAD
+
             var playList = musicLib.Playlists;
             
             foreach (var item in playList)
@@ -62,13 +63,8 @@ namespace hTunes
             else
             {
                 dataGrid.ItemsSource = musicLib.SongsForPlaylist(curItem).DefaultView;
-=======
-            var playlist = music.Playlists;
-            foreach ( var playlists in playlist)
-            {
-                listBox.Items.Add(playlists);
->>>>>>> origin/master
             }
+           
         }
     }
 }

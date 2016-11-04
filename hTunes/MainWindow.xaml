@@ -12,7 +12,7 @@
             <ColumnDefinition Width="115"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" Margin="2,10,10,10" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1" CanUserAddRows="False">
+        <DataGrid x:Name="dataGrid" Margin="2,10,10,10" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding title}" Header="Title"/>
@@ -21,11 +21,8 @@
                 <DataGridTextColumn Binding="{Binding genre}" Header="Genre"/>
             </DataGrid.Columns>
         </DataGrid>
-<<<<<<< HEAD
+
         <ListBox x:Name="listBox" HorizontalAlignment="Right" Margin="0,10,3,10" Width="102" Grid.Column="0" Grid.Row="1" SelectionChanged="listBox_SelectionChanged"/>
-=======
-        <ListBox x:Name="listBox" HorizontalAlignment="Right" Margin="0,10,3,10" Width="102" Grid.Column="0" Grid.Row="1"/>
->>>>>>> origin/master
         <Button Content="Play" HorizontalAlignment="Center" Margin="100,0,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" Grid.Row="2"/>
         <Button Content="Stop" Margin="113,0,0,0" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Width="76"/>
         <ToolBar VerticalAlignment="Top" Height="25" Grid.ColumnSpan="2" >
