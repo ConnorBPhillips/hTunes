@@ -68,7 +68,7 @@ namespace hTunes
 
         private void about_Click(object sender, RoutedEventArgs e)
         {
-            AboutBox1 aboutBox = new AboutBox1();
+            AboutBox aboutBox = new AboutBox();
             aboutBox.Show();
         }
 
