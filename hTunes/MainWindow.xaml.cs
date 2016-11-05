@@ -74,7 +74,13 @@ namespace hTunes
 
         private void play_Click(object sender, RoutedEventArgs e)
         {
-
+            DataRowView rowView = dataGrid.SelectedItem as DataRowView;
+            if (rowView != null)
+            {
+                // Extract the song ID from the selected song
+                int songId = Convert.ToInt32(rowView.Row.ItemArray[0]);
+                
+            }
         }
 
         private void stop_Click(object sender, RoutedEventArgs e)

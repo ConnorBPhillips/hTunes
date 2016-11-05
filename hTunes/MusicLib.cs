@@ -9,12 +9,14 @@ using System.Data;
 using System.Net;
 using System.IO;
 using System.Xml;
+using System.Windows.Media;
 
 namespace hTunes
 {
     class MusicLib
     {
         private DataSet musicDataSet;
+        private MediaPlayer mediaPlayer;
 
         public const string XML_MUSICFILE = "music.xml";
         public const string XSD_MUSICFILE = "music.xsd";
@@ -486,6 +488,11 @@ namespace hTunes
             }
 
             return table;
+        }
+
+        public void playSong()
+        {
+            
         }
     }
 }
