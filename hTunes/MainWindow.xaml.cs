@@ -25,6 +25,7 @@ namespace hTunes
     {
         private DataSet musicDataSet = new DataSet();
         private MusicLib musicLib = new MusicLib();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -89,6 +90,11 @@ namespace hTunes
         private void newPlaylist_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            musicLib.Save();
         }
     }
 }
