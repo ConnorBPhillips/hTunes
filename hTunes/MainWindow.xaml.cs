@@ -28,13 +28,7 @@ namespace hTunes
         public MainWindow()
         {
             InitializeComponent();
-
-
-           
-
-           
-
-
+    
             musicDataSet.ReadXmlSchema("music.xsd");
 
             musicDataSet.ReadXml("music.xml");
@@ -43,7 +37,7 @@ namespace hTunes
 
             listBox.Items.Add("All Music");
 
-
+            musicLib.AddImagestoSongs();
             var playList = musicLib.Playlists;
             
             foreach (var item in playList)

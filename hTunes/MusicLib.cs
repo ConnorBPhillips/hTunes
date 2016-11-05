@@ -6,7 +6,9 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Data;
-
+using System.Net;
+using System.IO;
+using System.Xml;
 
 namespace hTunes
 {
@@ -104,6 +106,7 @@ namespace hTunes
                 song.Genre = row["genre"].ToString();
                 song.Length = row["length"].ToString();
                 song.Filename = row["filename"].ToString();
+                song.AlbumImage = row["albumImage"].ToString();
 
                 return song;
             }
@@ -111,7 +114,66 @@ namespace hTunes
             // Must not have found this song ID
             return null;
         }
+        public void AddImagestoSongs()
+        {
+            DataTable table = musicDataSet.Tables["song"];
+            foreach (var songId in SongIds)
+            {
+                getImage(Convert.ToInt32(songId));
+            }
+        }
+        public Song getImage(int songId)
+        {
+            DataTable table = musicDataSet.Tables["song"];
+            Song song = new Song();
+            string artist = null;
+            string title = null;
+            foreach (DataRow row in table.Select("id=" + songId))
+            {
+                artist = row["artist"].ToString();
+                title = row["title"].ToString();
+            }
+            string API_KEY = "e1d7cac3d825c39c69e1e0f2a73ca7f8";
+            String url = "http://ws.audioscrobbler.com/2.0/?method=track.getInfo&api_key=" + API_KEY + "&" + "artist=" + WebUtility.UrlEncode(artist) + "&track=" + WebUtility.UrlEncode(title);
+            try
+            {
+                HttpWebRequest request = WebRequest.Create(url) as HttpWebRequest;
+                using (WebResponse response = request.GetResponse())
+                {
+                    Stream strm = response.GetResponseStream();
+                    using (XmlTextReader reader = new XmlTextReader(strm))
+                    {
+                        while (reader.Read())
+                        {
+                            if (reader.NodeType == XmlNodeType.Element)
+                            {
+                                Console.WriteLine("name = " + reader.Name);
+                                if (reader.Name == "image")
+                                {
+                                    if (reader.GetAttribute("size") == "medium")
+                                        Console.WriteLine("Image URL = " + reader.ReadString());
+                                    song.AlbumImage = reader.ReadString();
+                                    
+                                }
+                            }
+                        }
+                    }
+                }
+            }
 
+            catch (WebException e)
+            {
+                // A 400 response is returned when the song is not in their library     
+                Console.WriteLine("Error: " + e.Message);
+                song.AlbumImage = "";
+            }
+            foreach (DataRow row in table.Select("id=" + songId))
+            {   
+                row["albumImage"] = song.AlbumImage;
+            }
+            return song;
+        }
+    
         //     
         // 
         /// <summary>
@@ -381,6 +443,7 @@ namespace hTunes
         /// </summary>
         /// <param name="playlist"></param>
         /// <returns></returns>
+        
         public DataTable SongsForPlaylist(string playlist)
         {
             // Create a table with song attributes and position
