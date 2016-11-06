@@ -490,9 +490,11 @@ namespace hTunes
             return table;
         }
 
-        public void playSong()
+        public void PlaySong(int songID)
         {
-            
+            Song s=GetSong(songID);
+            mediaPlayer.Open(new Uri(s.Filename));
+            mediaPlayer.Play();
         }
     }
 }
