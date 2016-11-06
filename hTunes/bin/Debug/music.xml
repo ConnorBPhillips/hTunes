@@ -9,7 +9,7 @@
     <length>2:21</length>
     <genre>Soundtrack</genre>
     <url>http://www.last.fm/music/+noredirect/Trent+Reznor+&amp;+Atticus+Ross/_/In+the+Hall+of+the+Mountain+King</url>
-    <albumImage>http://img2-ak.lst.fm/i/u/34s/44d470d009d24d658d0d2b2bcaa2bcd2.png</albumImage>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/44d470d009d24d658d0d2b2bcaa2bcd2.png</albumImage>
   </song>
   <song>
     <id>10</id>
@@ -20,7 +20,7 @@
     <length>2:36</length>
     <genre>Soundtrack</genre>
     <url>http://www.last.fm/music/Daft+Punk/TRON:+Legacy</url>
-    <albumImage>http://img2-ak.lst.fm/i/u/34s/83a0d560356141a5c1e594b156eae495.png</albumImage>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/466bbf7a094eba1ccf1187002fe383e7.png</albumImage>
   </song>
   <song>
     <id>11</id>
@@ -31,6 +31,7 @@
     <length>3:58</length>
     <genre>Pop</genre>
     <url>http://www.last.fm/music/OneRepublic/_/All+the+Right+Moves</url>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/d791e257c20a41fa97595960b6426592.png</albumImage>
   </song>
   <song>
     <id>14</id>
@@ -41,7 +42,7 @@
     <length>3:13</length>
     <genre>Alternative</genre>
     <url>http://www.last.fm/music/Depeche+Mode/Sounds+Of+The+Universe</url>
-    <albumImage>http://img2-ak.lst.fm/i/u/34s/ebfd381f672a4d25acfe3914d030b2b9.png</albumImage>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/ebfd381f672a4d25acfe3914d030b2b9.png</albumImage>
   </song>
   <song>
     <id>15</id>
@@ -52,6 +53,7 @@
     <length>3:6</length>
     <genre>Alternative</genre>
     <url>http://www.last.fm/music/Imagine+Dragons/_/Radioactive</url>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/ecae82853b784726c7e2c4e2ba55a4fd.png</albumImage>
   </song>
   <song>
     <id>16</id>
@@ -61,6 +63,65 @@
     <filename>C:\Users\fmccown\Music\iTunes\iTunes Media\Music\Compilations\New Tales to Tell - A Tribute to Love an\1-04 No New Tale to Tell.m4a</filename>
     <length>3:17</length>
     <genre>Alternative</genre>
+    <albumImage />
+  </song>
+  <song>
+    <id>17</id>
+    <title>Splitting Colors</title>
+    <artist />
+    <album>Relativity 2</album>
+    <filename>D:\Music\Lemaitre\Relativity 2\1-03 Splitting Colors.mp3</filename>
+    <length>3:59</length>
+    <genre>Pop</genre>
+    <albumImage />
+  </song>
+  <song>
+    <id>18</id>
+    <title>Appreciate ((Uppermost Remix))</title>
+    <artist />
+    <album>Relativity 2</album>
+    <filename>D:\Music\Lemaitre\Relativity 2\1-05 Appreciate.mp3</filename>
+    <length>4:52</length>
+    <genre>Pop</genre>
+    <albumImage />
+  </song>
+  <song>
+    <id>19</id>
+    <title>Splitting Colors</title>
+    <artist />
+    <album>Relativity 2</album>
+    <filename>D:\Music\Lemaitre\Relativity 2\1-03 Splitting Colors.mp3</filename>
+    <length>3:59</length>
+    <genre>Pop</genre>
+    <albumImage />
+  </song>
+  <song>
+    <id>20</id>
+    <title>Iron Pyrite</title>
+    <artist>Lemaitre</artist>
+    <album>Relativity 3 - EP</album>
+    <filename>D:\Music\Lemaitre\Relativity 3 - EP\02 Iron Pyrite.mp3</filename>
+    <length>3:40</length>
+    <genre>Pop</genre>
+  </song>
+  <song>
+    <id>21</id>
+    <title>Continuum</title>
+    <artist>Lemaitre</artist>
+    <album>Relativity 3 - EP</album>
+    <filename>D:\Music\Lemaitre\Relativity 3 - EP\01 Continuum.mp3</filename>
+    <length>4:48</length>
+    <genre>Pop</genre>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/6aaccd8cea9e4e4c8aed784a4139fc82.png</albumImage>
+  </song>
+  <song>
+    <id>22</id>
+    <title>Cut To Black</title>
+    <artist>Lemaitre</artist>
+    <album>Relativity 3 - EP</album>
+    <filename>D:\Music\Lemaitre\Relativity 3 - EP\04 Cut To Black.mp3</filename>
+    <length>3:22</length>
+    <genre>Pop</genre>
   </song>
   <playlist>
     <name>Cool stuff</name>

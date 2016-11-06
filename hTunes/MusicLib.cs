@@ -16,7 +16,7 @@ namespace hTunes
     class MusicLib
     {
         private DataSet musicDataSet;
-        private MediaPlayer mediaPlayer;
+        private MediaPlayer mediaPlayer = new MediaPlayer();
 
         public const string XML_MUSICFILE = "music.xml";
         public const string XSD_MUSICFILE = "music.xsd";
@@ -116,6 +116,7 @@ namespace hTunes
             // Must not have found this song ID
             return null;
         }
+
         public void AddImagestoSongs()
         {
             DataTable table = musicDataSet.Tables["song"];
@@ -124,6 +125,7 @@ namespace hTunes
                 getImage(Convert.ToInt32(songId));
             }
         }
+
         public Song getImage(int songId)
         {
             DataTable table = musicDataSet.Tables["song"];

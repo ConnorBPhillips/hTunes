@@ -29,10 +29,8 @@ namespace hTunes
         public MainWindow()
         {
             InitializeComponent();
-    
-            musicDataSet.ReadXmlSchema("music.xsd");
 
-            musicDataSet.ReadXml("music.xml");
+            readXML();
 
             dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
 
@@ -106,7 +104,11 @@ namespace hTunes
             {
                 Song s = GetSongDetails(openFileDialog.FileName);
                 musicLib.AddSong(s);
-                musicLib.AddSongToPlaylist(s.Id,"All Music");
+                musicLib.Save();
+                dataGrid.ItemsSource = null;
+                musicDataSet.ReadXml("music.xml");
+                dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
+                dataGrid.Items.Refresh();
             }
         }
 
@@ -158,5 +160,14 @@ namespace hTunes
         {
             MessageBox.Show(errorMessage, "MiniPlayer", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
+        public void readXML()
+        {
+            musicDataSet.ReadXmlSchema("music.xsd");
+
+            musicDataSet.ReadXml("music.xml");
+        }
     }
+
+    
 }

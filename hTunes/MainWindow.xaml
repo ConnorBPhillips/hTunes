@@ -14,7 +14,9 @@
             <ColumnDefinition Width="115"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <DataGrid x:Name="dataGrid" Margin="2,10,10,10" AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1" CanUserAddRows="False" CanUserDeleteRows="False">
+        <DataGrid x:Name="dataGrid" Margin="2,10,10,10" AutoGenerateColumns="False" 
+                  Grid.Column="1" Grid.Row="1" CanUserAddRows="False" 
+                  SelectionMode="Single" CanUserDeleteRows="False">
             <DataGrid.ContextMenu>
                 <ContextMenu>
                     <MenuItem Command="" >
