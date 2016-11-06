@@ -45,7 +45,7 @@ namespace hTunes
             {
                 listBox.Items.Add(item);
             }
-        }
+        }   
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -105,7 +105,7 @@ namespace hTunes
             {
                 Song s = GetSongDetails(openFileDialog.FileName);
                 musicLib.AddSong(s);
-                //musicLib.Save();
+                musicLib.Save();
                 dataGrid.ItemsSource = null;
                 dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
                 dataGrid.Items.Refresh();
@@ -117,8 +117,30 @@ namespace hTunes
 
         private void newPlaylist_Click(object sender, RoutedEventArgs e)
         {
-
+            RenamePlaylist renamePlaylistForm = new RenamePlaylist();
+            renamePlaylistForm.ShowDialog();
+            bool duplicate = false;
+            string test = renamePlaylistForm.textBox.Text;
+            if (!test.Contains(" "))
+            {
+                var playList = musicLib.Playlists;
+                foreach (var item in playList)
+                {
+                    if (item == test)
+                    {
+                        duplicate = true;
+                    }
+                }
+                if (duplicate == false)
+                {
+                    musicLib.AddPlaylist(test);
+                    musicLib.Save();
+                    listBox.Items.Add(test);
+                }
+            }
         }
+
+        
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -176,6 +198,7 @@ namespace hTunes
             musicLib.Save();
         }
 
+<<<<<<< HEAD
         private void dataGrid_MouseMove(object sender, MouseEventArgs e)
         {
             // Get the current mouse position
@@ -221,6 +244,101 @@ namespace hTunes
                 musicLib.AddSongToPlaylist(songId, listBox.SelectedValue.ToString());
             }
 
+=======
+        private void remove_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView rowView = dataGrid.SelectedItem as DataRowView;
+            if (rowView != null)
+            {
+                // Extract the song ID from the selected song
+                int songId = Convert.ToInt32(rowView.Row.ItemArray[0]);
+                musicLib.DeleteSong(songId);
+                musicLib.Save();
+                dataGrid.ItemsSource = null;
+                dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
+                dataGrid.Items.Refresh();
+            }
+        }
+
+      
+
+        private void deletePlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            string curItem = listBox.SelectedItem.ToString();
+
+            if (curItem == "All Music")
+            {
+
+            }
+            else
+            {
+                musicLib.DeletePlaylist(curItem);
+                listBox.Items.Remove(listBox.SelectedIndex);
+                
+                musicLib.Save();
+                dataGrid.ItemsSource = null;
+                dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
+                dataGrid.Items.Refresh();
+                listBox.Items.Remove(listBox.SelectedIndex);
+                listBox.Items.Refresh();
+                listBox.UpdateLayout();
+                listBox.Items.Clear();
+
+
+                var playList = musicLib.Playlists;
+
+                foreach (var item in playList)
+                {
+                    listBox.Items.Add(item);
+                }
+
+            }
+        }
+
+        private void renamePlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            string curItem = listBox.SelectedItem.ToString();
+
+            if (curItem == "All Music")
+            {
+                
+            }
+            else
+            {
+                RenamePlaylist renamePlaylistForm = new RenamePlaylist();
+                renamePlaylistForm.ShowDialog();
+                bool duplicate = false;
+                string test = renamePlaylistForm.textBox.Text;
+                if (!test.Contains(" "))
+                {
+                    var playList = musicLib.Playlists;
+                    foreach (var item in playList)
+                    {
+                        if (item == test)
+                        {
+                            duplicate = true;
+                        }
+                    }
+                    if (duplicate == false)
+                    {
+                        musicLib.RenamePlaylist(curItem, test);
+                        musicLib.Save();
+                        listBox.Items.Clear();
+                        
+
+                        foreach (var item in playList)
+                        {
+                            listBox.Items.Add(item);
+                        }
+
+
+                    }
+                }
+                
+               
+               
+            }
+>>>>>>> origin/master
         }
     }
 

@@ -65,6 +65,7 @@
     <genre>Alternative</genre>
     <albumImage />
   </song>
+<<<<<<< HEAD
   <song>
     <id>17</id>
     <title>Fiction</title>
@@ -130,11 +131,10 @@
     <genre>Pop</genre>
     <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/6aaccd8cea9e4e4c8aed784a4139fc82.png</albumImage>
   </song>
+=======
+>>>>>>> origin/master
   <playlist>
     <name>Cool stuff</name>
-  </playlist>
-  <playlist>
-    <name>Energize</name>
   </playlist>
   <playlist_song>
     <song_id>9</song_id>
@@ -144,16 +144,6 @@
   <playlist_song>
     <song_id>10</song_id>
     <playlist_name>Cool stuff</playlist_name>
-    <position>2</position>
-  </playlist_song>
-  <playlist_song>
-    <song_id>14</song_id>
-    <playlist_name>Energize</playlist_name>
-    <position>1</position>
-  </playlist_song>
-  <playlist_song>
-    <song_id>9</song_id>
-    <playlist_name>Energize</playlist_name>
     <position>2</position>
   </playlist_song>
 </music>
