@@ -104,6 +104,7 @@ namespace hTunes
             {
                 Song s = GetSongDetails(openFileDialog.FileName);
                 musicLib.AddSong(s);
+                //musicLib.Save();
                 dataGrid.ItemsSource = null;
                 dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
                 dataGrid.Items.Refresh();
@@ -120,7 +121,7 @@ namespace hTunes
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            musicLib.Save();
+            //musicLib.Save();
         }
 
         private Song GetSongDetails(string filename)
@@ -167,6 +168,11 @@ namespace hTunes
             musicDataSet.ReadXmlSchema("music.xsd");
 
             musicDataSet.ReadXml("music.xml");
+        }
+
+        private void Window_Closing_1(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            musicLib.Save();
         }
     }
 
