@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{97D5EBE0-3B93-4D0C-AAE6-56BC0211B270}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>hTunes</RootNamespace>
     <AssemblyName>hTunes</AssemblyName>
@@ -36,6 +36,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Froyoshark-Enkel-ITunes.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="policy.2.0.taglib-sharp">

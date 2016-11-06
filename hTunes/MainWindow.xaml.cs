@@ -39,6 +39,7 @@ namespace hTunes
             listBox.Items.Add("All Music");
 
             musicLib.AddImagestoSongs();
+
             var playList = musicLib.Playlists;
             
             foreach (var item in playList)
@@ -61,10 +62,11 @@ namespace hTunes
             }
            
         }
-       private void removeFromPlaylist()
-        {
 
-        }
+       private void removeFromPlaylist()
+       {
+
+       }
 
         private void about_Click(object sender, RoutedEventArgs e)
         {
@@ -104,6 +106,7 @@ namespace hTunes
             {
                 Song s = GetSongDetails(openFileDialog.FileName);
                 musicLib.AddSong(s);
+                musicLib.AddSongToPlaylist(s.Id,"All Music");
             }
         }
 
