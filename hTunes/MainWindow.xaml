@@ -19,9 +19,10 @@
                   SelectionMode="Single" CanUserDeleteRows="False">
             <DataGrid.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Command="" >
+                    <MenuItem Header="Play" Click="play_Click" />
+                    <MenuItem Header="Remove" Click="remove_Click"/>
 
-                    </MenuItem>
+
                 </ContextMenu>
             </DataGrid.ContextMenu>
            
@@ -62,9 +63,9 @@
         <ListBox x:Name="listBox" HorizontalAlignment="Right" Margin="0,10,3,10" Width="102" Grid.Column="0" Grid.Row="1" SelectionChanged="listBox_SelectionChanged" SelectionMode="Single">
             <ListBox.ContextMenu>
                 <ContextMenu>
-                    <MenuItem Command="">
-                        
-                    </MenuItem>
+                    <MenuItem Header="Rename Playlist" Click="renamePlaylist_Click"/>
+                    <MenuItem Header="Delete Playlist" Click="deletePlaylist_Click"/>
+
                 </ContextMenu>
             </ListBox.ContextMenu>
         </ListBox>

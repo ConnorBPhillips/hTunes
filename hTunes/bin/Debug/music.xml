@@ -65,75 +65,8 @@
     <genre>Alternative</genre>
     <albumImage />
   </song>
-  <song>
-    <id>17</id>
-    <title>Fiction</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\03 Fiction.mp3</filename>
-    <length>3:54</length>
-    <genre>Pop</genre>
-  </song>
-  <song>
-    <id>18</id>
-    <title>Iron Pyrite</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\02 Iron Pyrite.mp3</filename>
-    <length>3:40</length>
-    <genre>Pop</genre>
-  </song>
-  <song>
-    <id>19</id>
-    <title>Fiction</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\03 Fiction.mp3</filename>
-    <length>3:54</length>
-    <genre>Pop</genre>
-  </song>
-  <song>
-    <id>20</id>
-    <title>Continuum</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\01 Continuum.mp3</filename>
-    <length>4:48</length>
-    <genre>Pop</genre>
-    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/6aaccd8cea9e4e4c8aed784a4139fc82.png</albumImage>
-  </song>
-  <song>
-    <id>21</id>
-    <title>Cut To Black</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\04 Cut To Black.mp3</filename>
-    <length>3:22</length>
-    <genre>Pop</genre>
-  </song>
-  <song>
-    <id>22</id>
-    <title>Fiction</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\03 Fiction.mp3</filename>
-    <length>3:54</length>
-    <genre>Pop</genre>
-  </song>
-  <song>
-    <id>23</id>
-    <title>Continuum</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\01 Continuum.mp3</filename>
-    <length>4:48</length>
-    <genre>Pop</genre>
-  </song>
   <playlist>
     <name>Cool stuff</name>
-  </playlist>
-  <playlist>
-    <name>Energize</name>
   </playlist>
   <playlist_song>
     <song_id>9</song_id>
@@ -143,16 +76,6 @@
   <playlist_song>
     <song_id>10</song_id>
     <playlist_name>Cool stuff</playlist_name>
-    <position>2</position>
-  </playlist_song>
-  <playlist_song>
-    <song_id>14</song_id>
-    <playlist_name>Energize</playlist_name>
-    <position>1</position>
-  </playlist_song>
-  <playlist_song>
-    <song_id>9</song_id>
-    <playlist_name>Energize</playlist_name>
     <position>2</position>
   </playlist_song>
 </music>
