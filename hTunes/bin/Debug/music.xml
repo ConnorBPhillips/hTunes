@@ -65,6 +65,33 @@
     <genre>Alternative</genre>
     <albumImage />
   </song>
+  <song>
+    <id>17</id>
+    <title>Fiction</title>
+    <artist>Lemaitre</artist>
+    <album>Relativity 3 - EP</album>
+    <filename>D:\Music\Lemaitre\Relativity 3 - EP\03 Fiction.mp3</filename>
+    <length>3:54</length>
+    <genre>Pop</genre>
+  </song>
+  <song>
+    <id>18</id>
+    <title>Fiction</title>
+    <artist>Lemaitre</artist>
+    <album>Relativity 3 - EP</album>
+    <filename>D:\Music\Lemaitre\Relativity 3 - EP\03 Fiction.mp3</filename>
+    <length>3:54</length>
+    <genre>Pop</genre>
+  </song>
+  <song>
+    <id>19</id>
+    <title>Iron Pyrite</title>
+    <artist>Lemaitre</artist>
+    <album>Relativity 3 - EP</album>
+    <filename>D:\Music\Lemaitre\Relativity 3 - EP\02 Iron Pyrite.mp3</filename>
+    <length>3:40</length>
+    <genre>Pop</genre>
+  </song>
   <playlist>
     <name>Cool stuff</name>
   </playlist>

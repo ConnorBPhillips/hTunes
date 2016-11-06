@@ -25,6 +25,7 @@ namespace hTunes
     {
         private DataSet musicDataSet = new DataSet();
         private MusicLib musicLib = new MusicLib();
+        private Point startPoint;
 
         public MainWindow()
         {
@@ -212,8 +213,6 @@ namespace hTunes
             }
         }
 
-      
-
         private void deletePlaylist_Click(object sender, RoutedEventArgs e)
         {
             string curItem = listBox.SelectedItem.ToString();
@@ -276,20 +275,61 @@ namespace hTunes
                         musicLib.RenamePlaylist(curItem, test);
                         musicLib.Save();
                         listBox.Items.Clear();
-                        
 
                         foreach (var item in playList)
                         {
                             listBox.Items.Add(item);
                         }
-
-
                     }
-                }
-                
-               
-               
+                }   
             }
+        }
+
+        private void dataGrid_MouseMove(object sender, MouseEventArgs e)
+        {
+            // Get the current mouse position
+            Point mousePos = e.GetPosition(null);
+            Vector diff = startPoint - mousePos;
+
+            // Start the drag-drop if mouse has moved far enough
+            if (e.LeftButton == MouseButtonState.Pressed &&
+                (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
+                Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
+            {
+                // Initiate dragging the text from the datagrid
+                DragDrop.DoDragDrop(dataGrid, ExtractSelectedSongID(), DragDropEffects.Copy);
+            }
+        }
+
+        private void dataGrid_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // Store the mouse position
+            startPoint = e.GetPosition(null);
+        }
+
+        private int ExtractSelectedSongID()
+        {
+            int songId = 0;
+            DataRowView rowView = dataGrid.SelectedItem as DataRowView;
+            if (rowView != null)
+            {
+                // Extract the song ID from the selected song
+                songId = Convert.ToInt32(rowView.Row.ItemArray[0]);
+            }
+            return songId;
+        }
+
+        private void listBox_Drop(object sender, DragEventArgs e)
+        {
+            // If the DataObject contains string data, extract it
+            if (e.Data.GetDataPresent(DataFormats.StringFormat))
+            {
+                string dataString = (string)e.Data.GetData(DataFormats.StringFormat);
+                int songId = Convert.ToInt32(dataString);
+
+                musicLib.AddSongToPlaylist(songId, listBox.SelectedValue.ToString());
+            }
+
         }
     }
 
