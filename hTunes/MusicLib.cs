@@ -498,5 +498,15 @@ namespace hTunes
             mediaPlayer.Open(new Uri(s.Filename));
             mediaPlayer.Play();
         }
+
+        public void StopSong()
+        {
+            mediaPlayer.Stop();
+        }
+
+        public DataSet passTable()
+        {
+            return musicDataSet;
+        }
     }
 }

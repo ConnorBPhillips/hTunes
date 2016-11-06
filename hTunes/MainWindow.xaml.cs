@@ -85,7 +85,7 @@ namespace hTunes
 
         private void stop_Click(object sender, RoutedEventArgs e)
         {
-
+            musicLib.StopSong();
         }
 
         private void open_Click(object sender, RoutedEventArgs e)
@@ -104,11 +104,12 @@ namespace hTunes
             {
                 Song s = GetSongDetails(openFileDialog.FileName);
                 musicLib.AddSong(s);
-                musicLib.Save();
                 dataGrid.ItemsSource = null;
-                musicDataSet.ReadXml("music.xml");
-                dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
+                dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
                 dataGrid.Items.Refresh();
+
+                listBox.SelectedIndex= 0;
+                dataGrid.SelectedIndex = dataGrid.Items.Count-1;
             }
         }
 
