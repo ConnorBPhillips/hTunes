@@ -21,8 +21,7 @@
                 <ContextMenu>
                     <MenuItem Header="Play" Click="play_Click" />
                     <MenuItem Header="Remove" Click="remove_Click"/>
-
-
+                    <MenuItem Header="Remove from Playlist" Click="removeFromPlaylist_Click"/>
                 </ContextMenu>
             </DataGrid.ContextMenu>
            
@@ -63,7 +62,7 @@
         <ListBox x:Name="listBox" HorizontalAlignment="Right" 
                  Margin="0,10,3,10" Width="102" Grid.Column="0" Grid.Row="1" 
                  SelectionChanged="listBox_SelectionChanged" SelectionMode="Single" 
-                 AllowDrop="True" Drop="listBox_Drop">
+                 Drop="listBox_Drop">
             <ListBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Rename Playlist" Click="renamePlaylist_Click"/>

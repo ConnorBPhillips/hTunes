@@ -9,18 +9,7 @@
     <length>2:21</length>
     <genre>Soundtrack</genre>
     <url>http://www.last.fm/music/+noredirect/Trent+Reznor+&amp;+Atticus+Ross/_/In+the+Hall+of+the+Mountain+King</url>
-    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/44d470d009d24d658d0d2b2bcaa2bcd2.png</albumImage>
-  </song>
-  <song>
-    <id>10</id>
-    <title>End of Line</title>
-    <artist>Daft Punk</artist>
-    <album>TRON: Legacy (Original Motion Picture Soundtrack)</album>
-    <filename>C:\Users\fmccown\Music\iTunes\iTunes Media\Music\Daft Punk\TRON_ Legacy (Original Motion Picture So\12 End of Line.m4a</filename>
-    <length>2:36</length>
-    <genre>Soundtrack</genre>
-    <url>http://www.last.fm/music/Daft+Punk/TRON:+Legacy</url>
-    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/466bbf7a094eba1ccf1187002fe383e7.png</albumImage>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/64s/44d470d009d24d658d0d2b2bcaa2bcd2.png</albumImage>
   </song>
   <song>
     <id>11</id>
@@ -31,7 +20,7 @@
     <length>3:58</length>
     <genre>Pop</genre>
     <url>http://www.last.fm/music/OneRepublic/_/All+the+Right+Moves</url>
-    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/d791e257c20a41fa97595960b6426592.png</albumImage>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/64s/d791e257c20a41fa97595960b6426592.png</albumImage>
   </song>
   <song>
     <id>14</id>
@@ -42,7 +31,7 @@
     <length>3:13</length>
     <genre>Alternative</genre>
     <url>http://www.last.fm/music/Depeche+Mode/Sounds+Of+The+Universe</url>
-    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/ebfd381f672a4d25acfe3914d030b2b9.png</albumImage>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/64s/ebfd381f672a4d25acfe3914d030b2b9.png</albumImage>
   </song>
   <song>
     <id>15</id>
@@ -53,7 +42,7 @@
     <length>3:6</length>
     <genre>Alternative</genre>
     <url>http://www.last.fm/music/Imagine+Dragons/_/Radioactive</url>
-    <albumImage>https://lastfm-img2.akamaized.net/i/u/300x300/ecae82853b784726c7e2c4e2ba55a4fd.png</albumImage>
+    <albumImage>https://lastfm-img2.akamaized.net/i/u/64s/ecae82853b784726c7e2c4e2ba55a4fd.png</albumImage>
   </song>
   <song>
     <id>16</id>
@@ -64,24 +53,6 @@
     <length>3:17</length>
     <genre>Alternative</genre>
     <albumImage />
-  </song>
-  <song>
-    <id>17</id>
-    <title>Fiction</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\03 Fiction.mp3</filename>
-    <length>3:54</length>
-    <genre>Pop</genre>
-  </song>
-  <song>
-    <id>18</id>
-    <title>Fiction</title>
-    <artist>Lemaitre</artist>
-    <album>Relativity 3 - EP</album>
-    <filename>D:\Music\Lemaitre\Relativity 3 - EP\03 Fiction.mp3</filename>
-    <length>3:54</length>
-    <genre>Pop</genre>
   </song>
   <song>
     <id>19</id>
@@ -95,14 +66,12 @@
   <playlist>
     <name>Cool stuff</name>
   </playlist>
+  <playlist>
+    <name>TextBox</name>
+  </playlist>
   <playlist_song>
     <song_id>9</song_id>
     <playlist_name>Cool stuff</playlist_name>
     <position>1</position>
-  </playlist_song>
-  <playlist_song>
-    <song_id>10</song_id>
-    <playlist_name>Cool stuff</playlist_name>
-    <position>2</position>
   </playlist_song>
 </music>

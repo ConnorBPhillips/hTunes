@@ -155,7 +155,7 @@ namespace hTunes
                                 if (reader.Name == "image")
                                 {
                                     if (reader.GetAttribute("size") == "medium")
-                                        Console.WriteLine("Image URL = " + reader.ReadString());
+                                        //Console.WriteLine("Image URL = " + reader.ReadString());
                                     song.AlbumImage = reader.ReadString();
                                     
                                 }
@@ -406,6 +406,16 @@ namespace hTunes
                             where (string)row["playlist_name"] == playlist
                             select row["position"];
             return Convert.ToInt32(positions.Max());
+        }
+
+        public int GetSongPosition(int songId, string playlist)
+        {
+            DataTable table = musicDataSet.Tables["playlist_song"];
+            var positions = from row in table.AsEnumerable()
+                            where (string)row["playlist_name"] == playlist
+                            where (int)row["song_id"] == songId
+                            select row["positions"];
+            return Convert.ToInt32(positions);
         }
 
         /// <summary>

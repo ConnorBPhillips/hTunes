@@ -53,7 +53,7 @@ namespace hTunes
 
             if (curItem == "All Music")
             {
-                dataGrid.ItemsSource = musicDataSet.Tables["song"].DefaultView;
+                dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
             }
             else
             {
@@ -61,11 +61,6 @@ namespace hTunes
             }
            
         }
-
-       private void removeFromPlaylist()
-       {
-
-       }
 
         private void about_Click(object sender, RoutedEventArgs e)
         {
@@ -200,17 +195,23 @@ namespace hTunes
 
         private void remove_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView rowView = dataGrid.SelectedItem as DataRowView;
-            if (rowView != null)
+            MessageBoxResult result = MessageBox.Show("Are you sure want to remove that song?", "Remove Song"
+                                                      , MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if(result==MessageBoxResult.Yes)
             {
-                // Extract the song ID from the selected song
-                int songId = Convert.ToInt32(rowView.Row.ItemArray[0]);
-                musicLib.DeleteSong(songId);
-                musicLib.Save();
-                dataGrid.ItemsSource = null;
-                dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
-                dataGrid.Items.Refresh();
+                  DataRowView rowView = dataGrid.SelectedItem as DataRowView;
+                  if (rowView != null)
+                  {
+                        // Extract the song ID from the selected song
+                        int songId = Convert.ToInt32(rowView.Row.ItemArray[0]);
+                        musicLib.DeleteSong(songId);
+                        musicLib.Save();
+                        dataGrid.ItemsSource = null;
+                        dataGrid.ItemsSource = musicLib.passTable().Tables["song"].DefaultView;
+                        dataGrid.Items.Refresh();
+                  }
             }
+                
         }
 
         private void deletePlaylist_Click(object sender, RoutedEventArgs e)
@@ -233,15 +234,6 @@ namespace hTunes
                 listBox.Items.Remove(listBox.SelectedIndex);
                 listBox.Items.Refresh();
                 listBox.UpdateLayout();
-                listBox.Items.Clear();
-
-
-                var playList = musicLib.Playlists;
-
-                foreach (var item in playList)
-                {
-                    listBox.Items.Add(item);
-                }
 
             }
         }
@@ -274,12 +266,6 @@ namespace hTunes
                     {
                         musicLib.RenamePlaylist(curItem, test);
                         musicLib.Save();
-                        listBox.Items.Clear();
-
-                        foreach (var item in playList)
-                        {
-                            listBox.Items.Add(item);
-                        }
                     }
                 }   
             }
@@ -330,6 +316,31 @@ namespace hTunes
                 musicLib.AddSongToPlaylist(songId, listBox.SelectedValue.ToString());
             }
 
+        }
+
+        private void removeFromPlaylist_Click(object sender, RoutedEventArgs e)
+        {
+            string curItem = listBox.SelectedItem.ToString();
+            if (curItem != "All Music")
+            {
+                var playList = musicLib.Playlists;
+                foreach (var item in playList)
+                {
+                    if (item == curItem)
+                    {
+                        var temp = musicDataSet.Tables["playlist_song"];
+                        DataRowView rowView = dataGrid.SelectedItem as DataRowView;
+                        if (rowView != null)
+                        {
+                            //Extract the song ID from the selected song
+                            int songId = Convert.ToInt32(rowView.Row.ItemArray[0]);
+                            int position = musicLib.GetSongPosition(songId, curItem);
+                            musicLib.RemoveSongFromPlaylist(position, songId, curItem);
+                            musicLib.Save();
+                        }
+                    }
+                }
+            }
         }
     }
 
